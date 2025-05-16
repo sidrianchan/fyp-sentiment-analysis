@@ -11,8 +11,8 @@ dataset.  Artefacts frozen for COM3001 assessment (tag **v1.0-snapshot**).
 ```bash
 git clone https://github.com/sidrianchan/fyp-sentiment-analysis.git
 cd fyp-sentiment-analysis
-pip install -r requirements.txt              # PyTorch + Transformers etc.
-pytest -q                                    # 6-second smoke-test
+pip install -r requirements.txt
+pytest -q
 python - <<'PY'
 from src.infer import predict
 print(predict(["Great taste!", "Terrible service."]))
