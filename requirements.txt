@@ -1,0 +1,7 @@
+torch==2.2.0
+transformers==4.40.0
+scikit-learn==1.4.2
+optuna==3.6.1
+pandas
+matplotlib
+pytest==8.3.5
