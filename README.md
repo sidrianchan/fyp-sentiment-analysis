@@ -18,9 +18,6 @@ python3.10 -m venv .venv && source .venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
-#  – if you are **stuck on Python 3.13+**, run instead:
-# pip install torch>=2.3 --extra-index-url https://download.pytorch.org/whl/cpu
-# pip install -r requirements.txt --no-deps
 
 # Download & unzip weight (170 MB)
 mkdir -p artefacts/weights
@@ -28,7 +25,7 @@ curl -L -o artefacts/weights/bert.zip \
   https://github.com/sidrianchan/fyp-sentiment-analysis/releases/download/v1.0-snapshot/bert_base_finetuned.zip
 unzip -q artefacts/weights/bert.zip -d artefacts/weights && rm artefacts/weights/bert.zip
 
-# Run smoke-test (<6 s) + demo
+# Run smoke-test + demo
 pytest -q
 python - <<'PY'
 from src.infer import predict
