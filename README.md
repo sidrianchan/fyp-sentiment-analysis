@@ -13,20 +13,22 @@ dataset.  Artefacts frozen for COM3001 assessment (tag **v1.0-snapshot**).
 git clone https://github.com/sidrianchan/fyp-sentiment-analysis.git
 cd fyp-sentiment-analysis
 
-# Create a dedicated Python 3.10 env (recommended)
-python3 -m venv .venv && source .venv/bin/activate
+# Make a Python 3.10 virtual-env  (brew install python@3.10 if needed)
+python3.10 -m venv .venv && source .venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+#  – if you are **stuck on Python 3.13+**, run instead:
+# pip install torch>=2.3 --extra-index-url https://download.pytorch.org/whl/cpu
+# pip install -r requirements.txt --no-deps
 
-# Download & unzip pre-trained weight (~170 MB)
+# Download & unzip weight (170 MB)
 mkdir -p artefacts/weights
 curl -L -o artefacts/weights/bert.zip \
   https://github.com/sidrianchan/fyp-sentiment-analysis/releases/download/v1.0-snapshot/bert_base_finetuned.zip
-unzip -q artefacts/weights/bert.zip -d artefacts/weights
-rm artefacts/weights/bert.zip
+unzip -q artefacts/weights/bert.zip -d artefacts/weights && rm artefacts/weights/bert.zip
 
-# Run smoke-test (< 6 s) and a demo prediction
+# Run smoke-test (<6 s) + demo
 pytest -q
 python - <<'PY'
 from src.infer import predict
