@@ -4,9 +4,15 @@
 A lightweight BERT-based sentiment classifier for the Amazon Fine-Food Reviews
 dataset.  Artefacts frozen for COM3001 assessment (tag **v1.0-snapshot**).
 
+
+## Dataset Setup
+**Download the Dataset**:
+   - Download `Reviews.csv` from [Kaggle: Amazon Fine-Food Reviews](https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews).
+   - Place the file in the `data/raw/` directory: `mkdir data && mv Reviews.csv data/raw`.
+
 ---
 
-## Quick-start (CPU, no training)
+## Quick-start
 
 ```bash
 # Clone & enter repo
