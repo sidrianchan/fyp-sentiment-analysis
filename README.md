@@ -4,6 +4,12 @@
 A lightweight BERT-based sentiment classifier for the Amazon Fine-Food Reviews
 dataset.  Artefacts frozen for COM3001 assessment (tag **v1.0-snapshot**).
 
+## Licensing
+- **Code and Documentation**: Licensed under the [MIT License](LICENSE).
+- **Amazon Fine-Food Reviews Dataset**: Available from [Kaggle](https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews) under its respective terms.
+- **Pre-trained Weights**: The fine-tuned BERT weights (`artefacts/weights/bert_base_finetuned.zip`) are distributed under the MIT License, but the base BERT model is subject to the [Apache 2.0 License](https://github.com/google-research/bert/blob/master/LICENSE).
+- **Dependencies**: This project uses third-party libraries listed in `requirements.txt`. Refer to each library’s repository for its license (e.g., Apache 2.0 for Hugging Face Transformers, MIT for PyTorch).
+
 
 ## Dataset Setup
 **Download the Dataset**:
