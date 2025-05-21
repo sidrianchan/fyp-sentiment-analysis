@@ -1,0 +1,31 @@
+name: CI # shows up in the Actions tab / README badge
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Clone repository
+      - uses: actions/checkout@v4
+
+      # Choose Python version (same as local + report)
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      # Download the zipped weight from the v1.0-snapshot release
+      - name: Download pre-trained weight
+        run: |
+          mkdir -p artefacts/weights
+          curl -L \
+            -o artefacts/weights/bert_base_finetuned.zip \
+            https://github.com/${{ github.repository }}/releases/download/v1.0-snapshot/bert_base_finetuned.zip
+          unzip -q artefacts/weights/bert_base_finetuned.zip -d artefacts/weights
+          rm    artefacts/weights/bert_base_finetuned.zip
+
+      # Install dependencies + pytest
+      - run: pip install -r requirements.txt pytest
+
+      # Run the smoke test suite
+      - run: pytest -q

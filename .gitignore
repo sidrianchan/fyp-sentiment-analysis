@@ -1,0 +1,7 @@
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
+artefacts/weights/bert_base_finetuned.pt
+artefacts/weights/bert_base_finetuned.zip
+artefacts/weights/*.zip
+artefacts/weights/*.pt
